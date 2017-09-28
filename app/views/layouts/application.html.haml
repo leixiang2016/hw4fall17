@@ -1,14 +1,14 @@
 !!!
 %html
   %head
-    %title Rotten Potatoes~~!
+    %title Rotten Potatoes!
     = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-    = button_to "Signup/Login"
 
   %body
     %h1.title Rotten Potatoes!
+    button_to "Signup/Login"
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
