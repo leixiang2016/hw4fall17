@@ -8,7 +8,7 @@
 
   %body
     %h1.title Rotten Potatoes!
-    %= button_to "New User", new_user_path, :class => "button", :method => :get  %
+    <% button_to "New User", new_user_path, :class => "button", :method => :get %>
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
