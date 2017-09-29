@@ -8,10 +8,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user=User.create!(params[:user_id])
-    @email=User.create!(params[:email])
-    flash[:notice] = "Welcome #{@user.user_id}. Your account has been created."
-    redirect_to new_user_path
+    if User.exists?(user_id)
+      flash[:notice] = "The User Id #{params[:user][:user_id]} Sorry, this user_id is taken. Try abain."
+      redirect_to new_user_path
+    else
+      @user = User.create!(user_params)
+      flash[:notice] = "Welcome #{@user.user_id}. Your account has been created."
+      redirect_to root_path
+    end
   end
 
 end
