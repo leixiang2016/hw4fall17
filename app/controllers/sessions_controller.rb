@@ -9,9 +9,11 @@ class SessionsController < ApplicationController
     if user && user.email==params[:user][:email]
         session[:session_token]=user.session_token
         flash[:notice]= "Your are logged in as #{user.user_id}"
+        flash[:class]='flashMessage'
         redirect_to movies_path
     else
         flash[:warning] = "Invalid user-id/e-mail combination"
+        flash[:class]='flashMessage'
         redirect_to login_path
     end  
   end
