@@ -2,9 +2,9 @@
 
 =form_tag login_create_path do
   =label :user, :user_id, 'User-ID'
-  =text_field :user, 'user_id'
+  = text_field :user, 'user_id', :id =>'loginUser'
   =label :user, :email, 'E-Mail'
-  =text_field :user,'email'
+  =text_field :user,'email', :id =>'loginEmail'
   
-  =submit_tag ' Login to my account'
-%p.signup= link_to 'Sign-up for an account', new_user_path
+  =submit_tag ' Login to my account',:id => 'login_submit'
+= link_to 'Sign-up for an account', :id =>'signup'
