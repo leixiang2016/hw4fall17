@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         flash[:notice]= {:class => :flashMessage, :body =>"Your are logged in as #{user.user_id}"}
         redirect_to movies_path
     else
-        flash[:warning] = {:class => :flashMessage, :body =>'Invalid user-id/e-mail combination'}
+        flash[:notice] = {:class => :flashMessage, :body =>"Invalid user-id/e-mail combination"}
         redirect_to login_path
     end  
   end
