@@ -15,10 +15,10 @@
       - else
         =button_to 'Log Out', logout_path, :method => :delete, :id =>'logout'
       - if flash[:notice]
-        %div{:class => flash[:notice][:class]}
+        :class => "flashMessage"
           #notice.message= flash[:notice][:body]
       - elsif flash[:warning]
-        %div{:class => flash[:notice][:class]}
+        :class => "flashMessage"
           #warning.message= flash[:warning][:body]
 
       = yield
