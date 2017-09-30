@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     else   
       @user = User.create_user!(user_params)
       #flash[:warning] = {:class => :flashMessage, :body => "Welcome #{@user.user_id}. Your account has been created."}
-      flash[:warning] = "Welcome #{@user.user_id}. Your account has been created."
+      flash[:notice] = "Welcome #{@user.user_id}. Your account has been created."
       redirect_to login_path
     end  
   end
