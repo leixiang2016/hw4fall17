@@ -15,7 +15,7 @@
       - else
         =button_to 'Log Out', logout_path, :method => :delete, :id =>'logout'
       - if flash[:notice]
-        #notice.message= (flash[:notice], :class => 'flashMessage')
+        #notice.message= (:class => 'flashMessage', flash[:notice])
       - elsif flash[:warning]
         
         #warning.message= flash[:warning]
